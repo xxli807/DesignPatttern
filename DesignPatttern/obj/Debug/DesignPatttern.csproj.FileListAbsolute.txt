@@ -1,0 +1,12 @@
+c:\users\xin\documents\visual studio 2012\Projects\DesignPatttern\DesignPatttern\bin\Debug\DesignPatttern.exe.config
+C:\Users\xin\documents\visual studio 2012\Projects\DesignPatttern\DesignPatttern\bin\Debug\DesignPatttern.exe
+C:\Users\xin\documents\visual studio 2012\Projects\DesignPatttern\DesignPatttern\bin\Debug\DesignPatttern.pdb
+C:\Users\xin\documents\visual studio 2012\Projects\DesignPatttern\DesignPatttern\obj\Debug\DesignPatttern.csprojResolveAssemblyReference.cache
+C:\Users\xin\documents\visual studio 2012\Projects\DesignPatttern\DesignPatttern\obj\Debug\DesignPatttern.exe
+C:\Users\xin\documents\visual studio 2012\Projects\DesignPatttern\DesignPatttern\obj\Debug\DesignPatttern.pdb
+C:\Users\xin\Documents\GitHub\DesignPatttern\DesignPatttern\bin\Debug\DesignPatttern.exe.config
+C:\Users\xin\Documents\GitHub\DesignPatttern\DesignPatttern\obj\Debug\DesignPatttern.exe
+C:\Users\xin\Documents\GitHub\DesignPatttern\DesignPatttern\obj\Debug\DesignPatttern.pdb
+C:\Users\xin\Documents\GitHub\DesignPatttern\DesignPatttern\bin\Debug\DesignPatttern.exe
+C:\Users\xin\Documents\GitHub\DesignPatttern\DesignPatttern\bin\Debug\DesignPatttern.pdb
+C:\Users\xin\Documents\GitHub\DesignPatttern\DesignPatttern\obj\Debug\DesignPatttern.csprojResolveAssemblyReference.cache

@@ -1,0 +1,26 @@
+﻿
+
+
+1: For a single class, the class should not take too much responisibles. Otherwise it is hard to maintain
+
+2: Open Close Principle, a class/object should easy to be extend but close to modify code
+
+
+3:Liskov Substitution Principle: when child replace parent class, the code action should not be affected. 
+
+
+4: IOC/DI, Code with interface not implementation
+
+5: Interface segregation Principle: using multiple interfaces instead of one
+
+
+
+
+Create : new an object
+Singleton/Factory/Builder/Prototype
+
+Structure: class and object structure
+Adaptor/Bridge/Composite/decorade/proxy/facade
+
+Action: different object/class assign different tasks
+observer/state/meditor/stregrary
