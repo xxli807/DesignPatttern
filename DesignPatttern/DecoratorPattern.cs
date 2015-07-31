@@ -41,6 +41,9 @@ namespace DesignPatttern
     /// </summary>
     public abstract class Phone
     {
+        string brand { get; set; }
+        string price { get; set; }
+
         public abstract void Call();
     }
 

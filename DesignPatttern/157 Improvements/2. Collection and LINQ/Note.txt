@@ -1,0 +1,36 @@
+﻿
+0: Array or List<T>, the difference is that if the array length is fixed, then using array more efficiency, otherwise using List<T>
+
+1: If the App needs to dynamatic change the array length, using arrayList or List. (better using List as generic type can be saved.)
+no matter how when change the size of an array it means a new array object is created.
+
+2: choose the right collection for data list.
+Collection:
+
+if Liner (only one previous and next node):  FCL Implement more in this method 
+	if directly store (with an index): 
+		Array(List<T>), string, struct  (o(1) for add, O(Log(n) for inset))
+	else order store: 
+		Stack<T>, Queue<T>, index cluster(Dictionary<TKey, TValue>, LinkedList<T>)
+
+else 
+none Liner(multiple previous and next notes):
+	if hierarchy:
+		trees
+	else group set:
+		graph, HashSet
+	
+
+
+
+3: Make sure the thread safe in Collection. Using "lock" keyword, usage: object sycObj = new object();
+4: the property in the collection should set the readonly
+
+5: three types of delegate: 
+Acation define an operation without an return. 
+Func execute a function receive parameters and outout a result
+Predicate define a condication to check if the parameters is satisify
+
+6: Diff the IEnumerable<T> and IQueryable<T>
+IEnumerable<T> using local data as it works in memory
+IQueryable<T> using remote data as it works for database. It combines all search criterians and execute in db

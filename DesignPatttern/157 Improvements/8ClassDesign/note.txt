@@ -1,0 +1,46 @@
+﻿
+
+1： differentiate the interface and abstract class
+a> interface support multiple inherit, abstact only one
+b> interface can have propery, event signature, but cannot have detail implementation. Abstract can
+c> interface add new method then all inheritace must re-construcotr, while abstract no need
+So:
+1: If object has multiple similar function with related veriosn using abstract
+2: if the relation is not close, but only have same function statement, then using interface
+3: abstract class suit for rich function stage while interface for a set of single function
+e.g. Stream and FileStream, MemoryStream, BufferedStream are the abstract class
+abstract more used for reusablilty of the code. Devried class no need to have a code again to 
+get the same function. For example: If add a method to based class, then all devired class auto has the function.
+Ideal, once the interface is designed, it should not be changed while the abstract class can.
+
+
+Interface repobsility should be single as possible and the method should more short and useful. also 
+in c# interface can inheritance interface to add more interface. 
+
+in a word:  asbstract is for is a relation but interface is for can do
+
+*2: differentiate the composite and inheritance: (use compostie more then inheritance)
+composite is the Has a relation while inheritance is a relation.
+
+*3: using polymorphism to replace the if else condition.
+
+
+4: using private constructor for single class (singlton)
+
+5: using static constructor for static class {can catch the exception when init static value }
+
+6: differentiate the signleton and static class
+
+7: use DI to aviod the two ways coupling
+
+8: using chekced can throw an exception instead of keep running the application
+
+9: using HASH to verify if the file is modified
+
+10: using secureString to save the string saved in memory(System.Security.SecurtyString)
+
+11: define the code access security
+
+12: if a method less than 3 lines using anoumous method or lambda
+
+13: if api throw exception must write comment.

@@ -1,0 +1,8 @@
+﻿    /// <summary>
+    /// Observation pattern is used to describe the : Subject and Observer like news paper subscriber
+    /// Observer is the subscriber...Subject is the data part
+    /// Observer can register self into the Subject and remove them if no need those data
+    /// 
+    /// Used: when many objects have dependecy (1:M), when one object changes notify other related objects.
+    /// 
+    /// </summary>

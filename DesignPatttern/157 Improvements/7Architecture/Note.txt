@@ -1,0 +1,37 @@
+﻿
+
+
+1: field and property difference
+Property can have the set and get method. benefits: VS Support and thread safe. 
+In class if a filed is public then it needs be changed to property, otherwise, 
+should use field.
+
+
+2: Constructor needs to initlize the main field and property.
+If a class in instansized, then it should be consider to have complete action and property.
+If a filed is not instanized in the init method, then it should be initialized in the constrctor.
+eg. if a compnay exist, then it must have an CEO.
+ 
+
+ 3: Override and new difference
+ If new keyword is used then this method is independent to the base class
+ if override used then the devired class using the override class
+
+ 4: Avoid call the virtural method on the constructor
+
+ 5: method should consider public based type or interface. same as method, input and return can 
+ use the based class or interface type. e.g using IEnumberable instead of Collection
+
+
+ 6: if method input signature is not sure but the type is same then should use the params to 
+ reduce the repeat. 
+
+ 7: static and new instantiate a method is same. Meaning the way it loads to memory nad time is same.
+ but it can differece, when we init a method we must have the object. If a method is only
+ related with the type then it should be set to the static method, if it has relation with object then it should be 
+ set to the instaniate method.
+
+
+ 8: Important, using extension to inject the method. Same datetime, using this keyword to wrap it
+ note: the extension must be in static class which cannot be nested, the method must static.
+ Not support to extend the Property and Event.

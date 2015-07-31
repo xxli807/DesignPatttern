@@ -28,10 +28,10 @@ namespace DesignPatttern
     }
 
 
-    public abstract class Directory
+    public abstract class Directorys
     {
         public string name;
-        public Directory(string name)
+        public Directorys(string name)
         {
             this.name = name;
         }
@@ -40,7 +40,7 @@ namespace DesignPatttern
         public abstract void Show();
     }
 
-    public class Folder : Directory
+    public class Folder : Directorys
     {
         public Folder(string name)
             : base(name)
@@ -62,7 +62,7 @@ namespace DesignPatttern
         }
     }
 
-    public class File : Directory
+    public class File : Directorys
     {
         public File(string name)
             : base(name)
@@ -83,21 +83,30 @@ namespace DesignPatttern
         }
     }
 
-    public class ComplexDirectory : Directory
+    public class ComplexDirectory : Directorys
     {
-        private List<Directory> complexDirectory = new List<Directory>();
+        private List<Directorys> complexDirectory = new List<Directorys>();
 
         public ComplexDirectory(string name)
             : base(name)
         {
         }
 
-        public override void Add(Directory d)
+        public override void Add()
+        {
+            Console.WriteLine("Add a new File");
+        }
+        public override void Remove()
+        {
+            Console.WriteLine("Remove a File");
+        }
+
+        public void Add(Directorys d)
         {
             complexDirectory.Add(d);
         }
 
-        public override void Remove(Directory d)
+        public void Remove(Directorys d)
         {
             complexDirectory.Remove(d);
         }

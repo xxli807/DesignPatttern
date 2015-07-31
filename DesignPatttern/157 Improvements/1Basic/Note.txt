@@ -1,0 +1,40 @@
+﻿
+
+
+1: stringbuilder default the string length is 16, if over than 16 it will reallocate the memory.
+or using string.format which internally implement the string builder function
+
+2: in most case, we using FCL's tryParse, parse method.. check the implicity and explicity convertion, 
+we can overload the operator to do the job
+
+
+
+3: Cast Issue
+two class using operator to do the cast
+derived class and base class relationship
+
+a> if all class can be trace back to the same base class, then based on the base class we should use "as" keyword
+as keyword never throw exception, if not match will convert to null. and as more effective compare to cast
+
+b> but as cannot operate the primary type (int, long,string) so need to use is.
+
+c>Try parse is better then parse, exception is reduce the performace
+
+d>Using int? to make sure primary type can be null
+
+e> readonly and const difference:
+readonly is runtime constant value (so it can be changed).  constant is compile time
+const can used on primary, enum and string, readonly no restriction.
+
+f> should used to overload the operator for object.
+
+*4: When create an object needs to think if need to implement the IComparable
+class : IComparable<T>....... and class : IComparer and class : IEquality
+
+*5: Create toString() for class at specific situation. (IFormatProvider)
+
+
+6: dynamic will not check the type and runtime run it. using var (syntax suger) during the compile time
+the compiler will check it.
+
+7: Implement the ICloneable for  shallow or deep copy.

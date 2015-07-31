@@ -32,8 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,14 +43,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="157 Improvements\1Basic\CASTISAS.cs" />
+    <Compile Include="157 Improvements\1Basic\CloneImp.cs" />
+    <Compile Include="157 Improvements\2. Collection and LINQ\LINQ Test.cs" />
+    <Compile Include="157 Improvements\4. MemoryManagement and Serizlize\BinarySerializer.cs" />
+    <Compile Include="157 Improvements\4. MemoryManagement and Serizlize\DisposableClass.cs" />
+    <Compile Include="157 Improvements\4. MemoryManagement and Serizlize\Serialization.cs" />
+    <Compile Include="157 Improvements\6. Async and Thread\ThreadTest.cs" />
+    <Compile Include="157 Improvements\7Architecture\Employee.cs" />
+    <Compile Include="157 Improvements\7Architecture\No93Constructor.cs" />
+    <Compile Include="157 Improvements\7Architecture\No94override.cs" />
+    <Compile Include="157 Improvements\8ClassDesign\CompositeAndInheritance.cs" />
     <Compile Include="AdapterPattern.cs" />
     <Compile Include="BridgePattern.cs" />
     <Compile Include="BuilderPattern.cs" />
     <Compile Include="CompositePattern.cs" />
+    <Compile Include="Decoration\Beverage.cs" />
     <Compile Include="DecoratorPattern.cs" />
     <Compile Include="FacadePattern.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="MediatorPattern.cs" />
+    <Compile Include="Observation\Interfaces\IDisplay.cs" />
+    <Compile Include="Observation\Interfaces\IObserver.cs" />
+    <Compile Include="Observation\Interfaces\ISubject.cs" />
+    <Compile Include="Observation\Services\TempObserver.cs" />
+    <Compile Include="Observation\Services\Test.cs" />
+    <Compile Include="Observation\Services\WeatherData.cs" />
     <Compile Include="ObserverPattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,12 +77,41 @@
     <Compile Include="ProxyPattern.cs" />
     <Compile Include="Singleton.cs" />
     <Compile Include="StragetyPattern.cs" />
+    <Compile Include="Stragety\Character.cs" />
+    <Compile Include="Stragety\IWeaponBehavior.cs" />
+    <Compile Include="Stragety\Test.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="157 Improvements\7Architecture\Note.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Note.txt</LastGenOutput>
+    </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="157 Improvements\1Basic\Note.txt" />
+    <Content Include="157 Improvements\2. Collection and LINQ\Note.txt" />
+    <Content Include="157 Improvements\3. Generic, delegate and event\Note.txt" />
+    <Content Include="157 Improvements\5. Error and Exception\Note.txt" />
+    <Content Include="157 Improvements\4. MemoryManagement and Serizlize\Note.txt" />
+    <Content Include="157 Improvements\6. Async and Thread\Note.txt" />
+    <Content Include="157 Improvements\7Architecture\Note.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Note.tt</DependentUpon>
+    </Content>
+    <Content Include="157 Improvements\8ClassDesign\note.txt" />
+    <Content Include="157 Improvements\Recurisive\note.txt" />
+    <Content Include="Decoration\Note.txt" />
     <Content Include="Design Principle.txt" />
+    <Content Include="Observation\Note.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

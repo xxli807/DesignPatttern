@@ -1,0 +1,50 @@
+﻿
+
+
+1: Every type in c# represents an resource. There are two types of resources:
+
+a> CLR Managed resource (new from CLR) 
+b>  unmanaged resource: 
+Outscope of the CLR, like windows core object, file, DB connection, socket or COM Objects
+
+For all Unmanaged resouce, we need to explicitly implement the IDisposable interface. 
+
+2: Using keyword can be used to explicate implement the IDispoable, like:
+if the type is same:
+using(var cl = new SampleClass(), c2 = new SampleClass())
+
+if the type is different, then
+using(var c1 = new ClassC1())
+using(var c2 = new ClassC2())
+{
+}
+
+
+3: if needed, we need to assign object to null  for static field. 
+no need for none static class
+
+
+
+4: serizelize and deserizelize
+serilize means convert object into stream: like (ctr+c,ctr+v)
+deserilize means convert stream back to object
+
+But for unused field, we should mark the filed as not serizlized 
+a> save memory space
+b> after deserilize, the filed has no meaning....
+c> if some field in business logic not allowed serialized. like password
+
+
+
+5: Serialized attribute can be used
+Attribute can be used for class:
+OnDeserializedAttribute: invoked immediately when deserialized finished
+OnDeserializingAttribute: invoked when deserialized happen
+OnSerializedAttribute:  invoked when serialized function called.
+OnSerializingAttribute: invoked before the serialized happen.
+
+
+6: Implement the ISerializable function to control the serializable/deserialzie process
+
+
+7: if a devried class should take care of the parent class's serialization.

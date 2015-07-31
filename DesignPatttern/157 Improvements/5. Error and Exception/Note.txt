@@ -1,0 +1,21 @@
+﻿
+
+1: using Exception to replace return an error. (we can use ref string errorMsg to record the msg)
+
+2: Try catch module should handle another Exception handler only needs notify
+
+3: Use the Teser-Doer. (Using ref string errorMsg) to represent the msg
+
+*4: The standard business logic should be using exception (controllable .....)
+*4: Do not alway try catch the Exception, but allow the Exception to broadcase up layer..
+
+
+5: can use Exception's Data property to return some errors:
+try{}
+catch(SocketException err)
+{
+err.Data.Add("SocketInfo","no internet");
+}
+
+//higer layer
+err.Data["SocketInfo"].toString();

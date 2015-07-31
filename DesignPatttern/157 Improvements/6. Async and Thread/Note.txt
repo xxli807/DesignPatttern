@@ -1,0 +1,96 @@
+﻿
+
+1: when to use thread and async
+ 
+ DMA(Direct Memory Access) Model, Under this pattern, the data saved in memory no need to go through CPU.
+ via DMA data exchange (i/o), there is almost no consumption for the CPU. In the Hardware, netcard, sound card all 
+ have this function. Therefore, the CLR providers an async way to use the hardware' DMA function
+
+ async actually use the thread pool method to manage the thread. When use the async the CPU will handle th job 
+ to the thread pool when the system starts I/O. tehn when the I/O finish, the async will sue the call back
+ to notify CPU...
+
+ so when to use thread and async?
+ if more computing job using multiple thread
+ if more I/O using async
+
+
+ 2: Thread sync
+ Thread sync is used to wait on the same object until is it unlocked. in C#, value type cannot be locked,
+ but the reference type can have the wait mechanism....lock and signle 
+	a> Lock mechanism can use keyword lock and type Monitor	
+	b> Signle synac: all type in signle sync are herite from abstract "WaitHandle"
+		waitHandle
+Mutex	Semaphore		EventWaitHandle
+					AutoResetEvent	ManualResetEvent
+
+
+3: avoid unappropriate thread lock the object
+* static method in the class should be thread safe while none static no need implment the thread safe
+* value type cannot be locked, as when we copy the value type it will create another copy...so it will still two objects
+* it is unnecessary to lock a string.(it is dangerous as well). The CLR will templory save the string into the memory, 
+so when two variable is assign the save string, so using lock will lock the same object that block the application
+* reduce the visiablity of the lock object. (the most common way is to lock(typeof(sampleClass) which is unnecessary to lock the whole thing))
+
+
+4: Pay attention to the IsBackgroud property
+Front Thread and backgroud thread differce:
+if frontent Thread not end, then the whole application still running
+if application stops, all backgroud thread finished.
+
+
+5: thread start time is not fixed..........it depends on the cpu spare time
+
+6: thread in c# has 5 priority: Highest, AboveNormal, Normal, BelowNormal and lowest
+in c#, Thread or Threadpull's thread always is same level as Normal
+
+
+7: Thread may not be immediate start and stop
+in c#, CLR use the "Cooperative Cancellation" to cancel a thread
+
+8: Use the ThreadPool or BackgroundWorker to replace the Thread
+	each thread include:
+		1: Thread Kernel Object: 
+		2: Thread Environment Block
+		3: User Mode Stack
+		4: Kernel Mode Stack
+
+9: Also using Task to replace ThreadPool.....(ok, so we just use the task)
+	1: ThreadPool cannot manage the thread cancellation, complete,failure notification
+	2: ThreadPoll not support the thread execute order
+
+So therefore, we use the Task to replace the threadPool. It optimize the ThreadPool function
+The task also support the 
+	a>IsCanceled
+	b>IsCompleted
+	c>IsFaulted
+
+10: Task also have the TaskFactory functions
+
+11: Using the Parallel to simplify the usage of the Task
+ Parallel has three methods: For, ForEach, Invoke. it will auto invoke the task for each element
+ but the output of using Parallel is not in order
+
+
+ 12: we can use the PLinq in the Parallel (actuall it is Linq just cast to parallel)
+ e.g.  from p in inlist.AsParallel() select p;
+
+
+ 13: Handle Exception in Task
+ wrapper all the exception and cast them all into the AggregateException
+ e.g. catch(AggregateException e){ do sth};
+
+ use the TaskContinuationOption.OnlyOnFaulted to wait only for the exception and wrapper them into the 
+ ContinureWith
+
+
+
+
+
+
+
+
+
+
+
+

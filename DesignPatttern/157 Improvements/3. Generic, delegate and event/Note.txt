@@ -1,0 +1,21 @@
+﻿
+
+1: Using the closure issue:
+like:
+ for(int i=0;i<5;i++){Action t=()=>{Console.WriteLine(i};}
+ foreach(var item in t){console.writeLine(t());}
+ result will be 5,5,5,5,5
+When the above code executived, the IL will generate an TempClass object, which means in lambda, even the i is not in the 
+local scope, but still the i is still exist as it is referenced. (the way to fix this is using an temp value inside the for )
+
+
+2: delegate is a method pointer and a class
+
+3: Can use the ILDasm.exe to check the IL code.
+
+4: Use "event" keyword to protect "delegate" method as the vs compile will stop the null values. 
+
+5: Use the standard EventHandler method:
+public deletegate void EventHandler(object sender, EventArgs e);
+sender means the event triger and e means the event argus(parameters) so the finally version will be:
+public event EventHandler<Class> DelegateName;
