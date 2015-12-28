@@ -80,6 +80,7 @@
     <Compile Include="Stragety\Character.cs" />
     <Compile Include="Stragety\IWeaponBehavior.cs" />
     <Compile Include="Stragety\Test.cs" />
+    <Compile Include="Stragety\xmlDocument.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="157 Improvements\7Architecture\Note.tt">
